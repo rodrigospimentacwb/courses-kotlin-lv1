@@ -63,6 +63,22 @@ fun main(args: Array<String>) {
         println()
         i++
     }
+
+    println()
+    println("*** For until: ignore last interaction ***")
+    for (i in 1 until 5) {
+        println(i)
+    }
+
+    println()
+    println("*** Nested Loop ***")
+    loop@ for (i in 1..100) {
+        println("i $i")
+        for (j in 1..100) {
+            println("j $j")
+            if (j == 5) break@loop
+        }
+    }
 }
 
 fun testConditions(balance: Double) {
