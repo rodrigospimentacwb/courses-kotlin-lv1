@@ -12,5 +12,6 @@ Kotlin Course Exercises: Getting Started and Object Orientation
 
 *The exercises will be divided into branches separated by class, and the 'Main' will be the final project of the course.
 
-Kotlin: 
-[Documentation](https://kotlinlang.org/docs/home.html)
+[Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+
+[Kotlin Additional Documentation](https://khan.github.io/kotlin-for-python-developers/#primitive-data-types-and-their-limitations)
