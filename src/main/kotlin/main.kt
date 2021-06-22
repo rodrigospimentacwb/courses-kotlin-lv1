@@ -22,9 +22,22 @@ fun main(args: Array<String>) {
     println("Depositing to Newton's account")
     accountNewton.deposit(50.0)
     println("New balance ${accountNewton.balance}")
+    println("Withdraw money to Newton's account")
+    accountNewton.withdraw(100.0)
+    println("New balance ${accountNewton.balance}")
+    println("Transfer from Newton's account to Currie's account")
+    if(accountNewton.transfer(50.0,accountCurrie)){
+        println("Transfer made")
+    }else{
+        println("Fail transfer")
+    }
+    println("New balance ${accountNewton.balance}")
 
     println("Depositing to Currie's account")
     accountCurrie.deposit(100.0)
+    println("New balance ${accountCurrie.balance}")
+    println("Withdraw money to Currie's account")
+    accountCurrie.withdraw(200.0)
     println("New balance ${accountCurrie.balance}")
 }
 
@@ -35,5 +48,20 @@ class Account {
 
     fun deposit(value:Double){
         balance += value
+    }
+
+    fun withdraw(value: Double){
+        if(balance >= value){
+            balance -= value
+        }
+    }
+
+    fun transfer(value:Double, destiny:Account): Boolean {
+        if(balance >= value){
+            balance -= value
+            destiny.balance += value
+            return true
+        }
+        return false
     }
 }
